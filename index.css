@@ -19,13 +19,29 @@ header{
 }
 
 main{
-  grid-area: M;
+  
   height: 80vh;
   width: 100vw;
 }
-
+img{
+  width: 200px;
+  height: auto;
+}
 .items-container{
   height: 70vh;
+  grid-area: M;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  }
+.drinks {
+ display: flex;
+ flex-direction: column;
+ background-color: lightblue;
+ padding: 9px;
+ margin: 9px auto;
+
+
 }
 .button_container{
   display: flex;
