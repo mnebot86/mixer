@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+  "H H H H"
+  "M M M M"
+  "F F F F"
+}
+
+header{
+  background-color: blue;
+  grid-area: H;
+}
+
+
+main{
+  background-color: gray;
+  grid-area: M;
+}
+
+
+footer{
+  background-color: green;
+  grid-area: F;
+}

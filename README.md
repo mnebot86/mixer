@@ -1,26 +1,27 @@
 #  Mixer
 
 ### Description
-Mixer is an app that will search up mix drink recipes depending on the liquor is selected.
+Ever go out to a bar or club with friends and not know what to ask the bartender for? Maybe, your hosting a shindig at your home and you have a cabinet full of bottles, but you don't how to blend them into deliciousness. 
+Mixer will bring out your inner bartender. Pick the base alcohol you have. Mixer will generate a list of cocktails with ingredients and stir instructions. 
 
 ## Api Source 
+#### Search by ingredients
 www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
 www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka
 www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum
 www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila
+#### Sample of cocktail details 
+www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
 
 
 ## API Snippet 
-![](api_snippet.png)
+![](readmeimage/api_snippet.png)
+![](readmeimage/detail.png)
 
 ## Wireframe
 
-!["Homepage"](wireframe1.png)
-![](wireframe_grid.png)
-![](wireframedrink.png)
-![](moble_home.png)
-![](mobile_grid.png)
-![](mobile_drink.png)
+!["Homepage"](readmeimage/new_wire.png)
+
 
 
 ## MVP
@@ -44,12 +45,17 @@ Search by first Letter
 |6/14   |Presentation                                       |
 
 ## Priorty Matrix
-![](Matrix.png)
+![](readmeimage/Matrix.png)
 
 ## Timeframes
-|Task     | Time     |
-|--------:|:--------:|
-|Html     | 2 hrs    |
-|AxiosCall| 3hrs     |
-|JS       | 3hrs     |
-|Css      | 3hrs     |
+|Task                          | Time  |
+|-----------------------------:|:-----:|
+|Html:adding classes and Ids   | 2 hrs |
+|event listener/ Dom           | 3 hrs |
+|add 2 axios calls             | 3 hrs |
+|styling event buttons         | 2 hrs |
+|The layout for drink grid     | 2 hrs |
+|styling the ingredient page   | 2 hrs |
+|researching / reviewing       | 3 hrs |
+|Css/grid/flex                 | 3 hrs |
+|Debugging                     | 5 hrs |
