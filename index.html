@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="index.js"></script>
   <title>MIXER</title>
 </head>
@@ -12,19 +13,21 @@
   <header>
     <nav>
       <section class="title_container">
-        <h1>MIXER</h1>
+        <h1 class='title'>Mixer</h1>
       </section>
     </nav>
   </header>
   <main>
     <section class="items-container">
-      <ul class="drinks"></ul>
+      <ul class="drinks">
+        Drink img list populate here
+      </ul>
     </section>
     <section class="button_container">
-      <button id='gin'>Gin</button>
-      <button id='rum' >Rum</button>
-      <button id="tequila">Tequila</button>
-      <button id='vodka'>Vodka</button>
+      <button id='gin' value="gin">Gin</button>
+      <button id='rum' value="rum">Rum</button>
+      <button id="tequila" value="tequila">Tequila</button>
+      <button id='vodka' value="vodka">Vodka</button>
     </section>
   </main>
   <footer>
