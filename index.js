@@ -66,19 +66,37 @@ const drinkValues = () => {
   document.querySelectorAll('.drinks').forEach((drink) => {
     drink.addEventListener('click', async (e) => {
     const getInstruction =  await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.value}`);
-    console.log('Instruction',getInstruction)
+    const instructionList = getInstruction.data.drinks[0]
+    console.log('Instruction',instructionList)
 
     //Creating a new div to hold img, ul, p
-    const instructionContainer = document.querySelector('.ingrdients-container');
+    const instructionContainer = document.querySelector('.ingredients-container');
     const recipeDiv = document.createElement('div');
+    recipeDiv.classList.add('.recipe-container')
     const imageDrink = document.createElement('img');
-    imageDrink.src = drink.strDrinkThumb;
+    imageDrink.src = instructionList.strDrinkThumb;
     const ingredientList = document.createElement('ul');
-    forEach(ingredient => {
-    const ingredientItem = document.createElement('li')
-    })
+    
+  
+        const ingredients = Object.entries(instructionList).filter((entry) => {
+          return entry[0].includes('strIngredient') && entry[1]
+          
+          
+        })
+        ingredients.forEach(ingredient => {
+        const ingredientItem = document.createElement('li');
+        ingredientItem.innerText = ingredient[1];
+        ingredientList.appendChild(ingredientItem);
+
+        
+      })
+      
+      
+   
+    
     const pTag = document.createElement('p');
-    pTag.innerText = drink.strInstructions
+    pTag.innerText = instructionList.strInstructions
+    console.log(ingredientList);
     recipeDiv.append(imageDrink, ingredientList, pTag);
     instructionContainer.appendChild(recipeDiv);
 

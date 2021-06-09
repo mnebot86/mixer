@@ -1,33 +1,34 @@
-body{
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
   display: grid;
-  grid-template-areas:
-  "H H H H"
-  "M M M M"
-  "I I I I"
-  "B B B B"  
-  "F F F F";
-  margin: 0 auto;
-  padding: 0;
+  height: 100vh;
+  grid-gap: 10px;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  
 }
 
 header{
-  border-bottom: 2px solid;
-  font-size: 30px;
-  grid-area: H;
-  height: 100px;
-  text-align: right;
-  width: 100vw;
-  
+background-color: blue;
+display: flex;
+height: 60px;
+justify-items: flex-end;
 }
+
 
 main{
   
   height: 80vh;
   width: 100vw;
+  background-color: black;
 }
 
 img{
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 .items-container{
@@ -38,9 +39,9 @@ img{
   overflow: auto;
   }
   
-.ingredients-container{
+section.ingredients-container{
   height: 70vh;
-  grid-area: I;
+  grid-area: M;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
@@ -51,22 +52,17 @@ img{
  background-color: lightblue;
  padding: 9px;
  margin: 9px auto;
-
+}
+.recipe-container {
+ display: flex;
+ flex-direction: row;
+ overflow: auto;
 
 }
 .button_container{
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  align-items: flex-start;
-  justify-content: space-around;
-  grid-area: B;
-  font-size: px; 
 
 }
 footer{
-  border-top: 2px solid;
-  height: 50px;
-  grid-area: F;
-  text-align: center;
+height: 12px;
+background-color: purple;
 }
