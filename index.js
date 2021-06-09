@@ -1,14 +1,14 @@
 // const ingredient = `www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userChoice}`
 // const instruction = `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-let userChoice= ''
+
 
 //Gin Button
 const buttonOne = document.querySelector('#gin');
-// const gin = buttonOne.value
+
 
 //Rum button
 const buttonTwo = document.querySelector('#rum')
-const rum = buttonTwo.value
+
 
 //Tequila button
 const buttonThree = document.querySelector('#tequila')
@@ -17,7 +17,7 @@ const buttonThree = document.querySelector('#tequila')
 //Vodka button
 const buttonFour = document.querySelector('#vodka')
 
-// console.log('TEST', gin, rum, tequila, vodka)
+
 
 // First Axios Call for Search by Alcohol 
 // Request Drinks Img and Name
@@ -55,17 +55,33 @@ function getResponse(e) {
   getIngredient(ingredient);
 
 }
-
+// Click event listener on buttons
 buttonOne.addEventListener('click', getResponse)
 buttonTwo.addEventListener('click', getResponse)
 buttonThree.addEventListener('click', getResponse)
 buttonFour.addEventListener('click', getResponse)
 
+// Created an event listener
 const drinkValues = () => {
   document.querySelectorAll('.drinks').forEach((drink) => {
     drink.addEventListener('click', async (e) => {
-    const instruction =  await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.value}`)
-      console.log(instruction)
+    const getInstruction =  await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.value}`);
+    console.log('Instruction',getInstruction)
+
+    //Creating a new div to hold img, ul, p
+    const instructionContainer = document.querySelector('.ingrdients-container');
+    const recipeDiv = document.createElement('div');
+    const imageDrink = document.createElement('img');
+    imageDrink.src = drink.strDrinkThumb;
+    const ingredientList = document.createElement('ul');
+    forEach(ingredient => {
+    const ingredientItem = document.createElement('li')
+    })
+    const pTag = document.createElement('p');
+    pTag.innerText = drink.strInstructions
+    recipeDiv.append(imageDrink, ingredientList, pTag);
+    instructionContainer.appendChild(recipeDiv);
+
 
     })
   })

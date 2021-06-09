@@ -3,6 +3,7 @@ body{
   grid-template-areas:
   "H H H H"
   "M M M M"
+  "I I I I"
   "B B B B"  
   "F F F F";
   margin: 0 auto;
@@ -13,6 +14,7 @@ header{
   border-bottom: 2px solid;
   font-size: 30px;
   grid-area: H;
+  height: 100px;
   text-align: right;
   width: 100vw;
   
@@ -23,6 +25,7 @@ main{
   height: 80vh;
   width: 100vw;
 }
+
 img{
   width: 200px;
   height: auto;
@@ -32,7 +35,15 @@ img{
   grid-area: M;
   display: flex;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow: auto;
+  }
+  
+.ingredients-container{
+  height: 70vh;
+  grid-area: I;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
   }
 .drinks {
  display: flex;
@@ -47,14 +58,15 @@ img{
   display: flex;
   flex-direction: row;
   width: 100vw;
-  align-content: flex-start;
+  align-items: flex-start;
   justify-content: space-around;
   grid-area: B;
-  font-size: px;
-  /* grid-template-rows: ; */
+  font-size: px; 
+
 }
 footer{
   border-top: 2px solid;
+  height: 50px;
   grid-area: F;
   text-align: center;
 }
