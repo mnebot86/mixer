@@ -1,5 +1,3 @@
-// const ingredient = `www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userChoice}`
-// const instruction = `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
 
 
 //Gin Button
@@ -23,24 +21,24 @@ const buttonFour = document.querySelector('#vodka')
 // Request Drinks Img and Name
 // Appends Both to items-container
 const getIngredient = async (url) => {
-   try{ 
-     const response = await axios.get(url)
-     const drinks = response.data.drinks;
-     drinks.forEach((drink) => {
-       const img = document.createElement('img');
-       img.src = drink.strDrinkThumb;
-       const itemContainer = document.querySelector('.items-container')
-       let pTag = document.createElement('p');
-      
-       pTag.innerText = drink.strDrink;
-       const drinkDiv = document.createElement('div');
-       drinkDiv.value = drink.idDrink
-       drinkDiv.classList.add('drinks')
-       drinkDiv.append(img, pTag);
-       itemContainer.appendChild(drinkDiv);
-     })
-     console.log('DATA', drinks);
-     drinkValues()
+  removeLiquor()
+  try{ 
+    const response = await axios.get(url)
+    const drinks = response.data.drinks;
+    drinks.forEach((drink) => {
+      const img = document.createElement('img');
+      img.src = drink.strDrinkThumb;
+      const itemContainer = document.querySelector('.items-container')
+      let pTag = document.createElement('p');
+      pTag.innerText = drink.strDrink;
+      const drinkDiv = document.createElement('div');
+      drinkDiv.value = drink.idDrink
+      drinkDiv.classList.add('drinks')
+      drinkDiv.append(img, pTag);
+      itemContainer.appendChild(drinkDiv);
+    })
+    console.log('DATA', drinks);
+    drinkValues()
   }catch (error){
     console.log(error);
   }
@@ -53,7 +51,7 @@ function getResponse(e) {
   // return userChoice = drink
   console.log(ingredient)
   getIngredient(ingredient);
-
+  
 }
 // Click event listener on buttons
 buttonOne.addEventListener('click', getResponse)
@@ -65,43 +63,59 @@ buttonFour.addEventListener('click', getResponse)
 const drinkValues = () => {
   document.querySelectorAll('.drinks').forEach((drink) => {
     drink.addEventListener('click', async (e) => {
-    const getInstruction =  await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.value}`);
-    const instructionList = getInstruction.data.drinks[0]
-    console.log('Instruction',instructionList)
-
-    //Creating a new div to hold img, ul, p
-    const instructionContainer = document.querySelector('.ingredients-container');
-    const recipeDiv = document.createElement('div');
-    recipeDiv.classList.add('.recipe-container')
-    const imageDrink = document.createElement('img');
-    imageDrink.src = instructionList.strDrinkThumb;
-    const ingredientList = document.createElement('ul');
-    
-  
-        const ingredients = Object.entries(instructionList).filter((entry) => {
-          return entry[0].includes('strIngredient') && entry[1]
-          
-          
-        })
-        ingredients.forEach(ingredient => {
+      const getInstruction =  await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.value}`);
+      const instructionList = getInstruction.data.drinks[0]
+      console.log('Instruction',instructionList)
+      
+      removeDrink()
+      
+      //Creating a new div to hold img, ul, p
+      const instructionContainer = document.querySelector('.ingredients-container');
+      const recipeDiv = document.createElement('div');
+      recipeDiv.classList.add('.recipe-container')
+      const imageDrink = document.createElement('img');
+      imageDrink.src = instructionList.strDrinkThumb;
+      const ingredientList = document.createElement('ul');
+      
+      
+      const ingredients = Object.entries(instructionList).filter((entry) => {
+        return entry[0].includes('strIngredient') && entry[1]
+        
+        
+      })
+      ingredients.forEach(ingredient => {
         const ingredientItem = document.createElement('li');
         ingredientItem.innerText = ingredient[1];
         ingredientList.appendChild(ingredientItem);
-
+        
         
       })
       
       
-   
-    
-    const pTag = document.createElement('p');
-    pTag.innerText = instructionList.strInstructions
-    console.log(ingredientList);
-    recipeDiv.append(imageDrink, ingredientList, pTag);
-    instructionContainer.appendChild(recipeDiv);
-
-
+      
+      
+      const pTag = document.createElement('p');
+      pTag.innerText = instructionList.strInstructions
+      console.log(ingredientList);
+      recipeDiv.append(imageDrink, ingredientList, pTag);
+      instructionContainer.appendChild(recipeDiv);
+      
+      
     })
   })
-
+  
+  function removeDrink(){
+    const clearDrink = document.querySelector('.ingredients-container')
+    while(clearDrink.lastChild){
+      clearDrink.removeChild(clearDrink.lastChild);
+    }
+    
+  }
+  
+}   
+function removeLiquor(){
+  const clearLiquor = document.querySelector('.items-container')
+  while(clearLiquor.lastChild){
+    clearLiquor.removeChild(clearLiquor.lastChild);
+  }
 }

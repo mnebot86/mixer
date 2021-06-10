@@ -4,27 +4,39 @@
   box-sizing: border-box;
 }
 
-html{
-  display: grid;
+body{
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  grid-gap: 10px;
-  grid-template-rows: 1fr 2fr 1fr 1fr;
-  
+  /* grid-template-areas:
+  "H H H H"
+  "M M M M"
+  "B B B B"
+  "F F F F" */
 }
-
+  
 header{
 background-color: blue;
 display: flex;
 height: 60px;
-justify-items: flex-end;
+justify-content: flex-end;
+grid-area: H;
+}
+.title{
+  /* justify-self: ; */
+  align-self: flex-end;
 }
 
-
 main{
+  grid-area: M;
+  display: flex;
+  flex-direction: column;
   
+  /* align-content: ; */
   height: 80vh;
   width: 100vw;
-  background-color: black;
+  background-color: gray;
+  
 }
 
 img{
@@ -39,13 +51,14 @@ img{
   overflow: auto;
   }
   
-section.ingredients-container{
+.ingredients-container{
   height: 70vh;
   grid-area: M;
   display: flex;
-  flex-wrap: wrap;
+  
   overflow: auto;
   }
+  
 .drinks {
  display: flex;
  flex-direction: column;
@@ -59,10 +72,15 @@ section.ingredients-container{
  overflow: auto;
 
 }
-.button_container{
 
+.button-container{
+  align-self: flex-end;
+  align-content: space-around;
+  width: 100vw;
 }
-footer{
+
+footer {
 height: 12px;
 background-color: purple;
+grid-area : F;
 }
