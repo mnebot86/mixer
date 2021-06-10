@@ -72,7 +72,7 @@ const drinkValues = () => {
       //Creating a new div to hold img, ul, p
       const instructionContainer = document.querySelector('.ingredients-container');
       const recipeDiv = document.createElement('div');
-      recipeDiv.classList.add('.recipe-container')
+      recipeDiv.classList.add('recipe-container')
       const imageDrink = document.createElement('img');
       imageDrink.src = instructionList.strDrinkThumb;
       const ingredientList = document.createElement('ul');
