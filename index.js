@@ -73,9 +73,13 @@ const drinkValues = () => {
       const instructionContainer = document.querySelector('.ingredients-container');
       const recipeDiv = document.createElement('div');
       recipeDiv.classList.add('recipe-container')
+      const textDiv = document.createElement('div')
+      textDiv.classList.add("text");
       const imageDrink = document.createElement('img');
       imageDrink.src = instructionList.strDrinkThumb;
       const ingredientList = document.createElement('ul');
+      const ulContainer = document.createElement('div');
+      ulContainer.classList.add('list');
       
       
       const ingredients = Object.entries(instructionList).filter((entry) => {
@@ -95,9 +99,13 @@ const drinkValues = () => {
       
       
       const pTag = document.createElement('p');
-      pTag.innerText = instructionList.strInstructions
+      pTag.innerText = instructionList.strInstructions;
       console.log(ingredientList);
-      recipeDiv.append(imageDrink, ingredientList, pTag);
+      recipeDiv.appendChild(imageDrink);
+      textDiv.append(pTag);
+      ulContainer.appendChild(ingredientList);
+      instructionContainer.appendChild(ulContainer);
+      instructionContainer.appendChild(textDiv);
       instructionContainer.appendChild(recipeDiv);
       
       
