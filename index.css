@@ -203,7 +203,7 @@ main{
   }
 }
 
-@media only screen and (max-width: 1168px){
+@media only screen and (max-width: 1204px){
 
 .ingredients-container img{
   width: 195px;
@@ -242,12 +242,74 @@ margin: 0 20px;
 
 }
 
-@media only screen and (max-width: 531px){
+@media only screen and (max-width: 570px){
 button{
-  margin: 0 auto;
+  margin: 5px auto;
+  border-radius: 100%;
+  width: 70px;
+  font-size: 18px;
+  padding: 5px;
+  content: 
 }
-/* .ingredients-container{
+.ingredients-container{
   flex-direction: column;
+  height: 52vh;
+  margin: 0;
+  padding:0;
+  align-items: flex-start;
+  
 
-} */
+}
+.ingredients-container img {
+ background-color: RGBA(255,255,255,0.78);
+ 
+}
+
+main{
+  height: 85vh;
+  overflow: hidden;
+  justify-content: center;
+  background-image: url(image/mix_green.jpeg);
+  opacity: .95;
+  
+}
+.text {
+  display: block;
+  padding: 10px ;
+  margin: 0 auto;
+  width: 350px;
+  background-color: RGBA(255,255,255,0.78);
+}
+  .text ul {
+  width: 250px;
+  height: 100px;
+  margin-left: 60px;
+  padding-left: 25px;
+  font-size: 24px;
+  overflow:scroll;
+}
+.text p {
+  flex-direction: row;
+  padding: 0;
+  margin:  10px auto;
+  
+  
+}
+.recipe-container {
+  margin: 8px 30%;
+  
+}
+
+.items-container {
+display: block;
+text-align: center;
+}
+.drinks{
+  display: block;
+  background-color: RGBA(255,255,255,0.78);
+}
+header, footer {
+  color: white;
+  background-color: black;
+}
 }

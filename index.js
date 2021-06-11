@@ -66,14 +66,8 @@ const drinkValues = () => {
       // Created a ptag for the instruction and Image tag for the photo for instruction card
       const instructionContainer = document.querySelector('.ingredients-container');
       const recipeDiv = document.createElement('div');
-      
-      
-      const box = document.createElement('div')
-      box.classList.add('box')
-      instructionContainer.appendChild(box)
-
       recipeDiv.classList.add('recipe-container')
-      const textDiv = document.createElement('div')
+       const textDiv = document.createElement('div')
       textDiv.classList.add("text");
       const imageDrink = document.createElement('img');
       imageDrink.src = instructionList.strDrinkThumb;
