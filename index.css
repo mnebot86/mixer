@@ -60,14 +60,29 @@ text-align: center;
 }
 
 #footer_name{
- margin-top: 25px;
+  margin-top: 25px;
   
 }
+
+#gin {
+  background-color: RGBA(0,137,0,0.63);
+  font-style: italic;
+  ;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.4);
+}
+
 .hidden{
   display: none;
 }
 
-.ingredients-container{
+.ingredients-container{ 
  display: flex;
  font-size: 24x;
  flex-direction: row;
@@ -122,6 +137,22 @@ main{
   width: 100vw;
 }
 
+.recipe-container{
+  margin-left: 50px;
+}
+  
+
+#rum{
+  background-color: RGBA(191,0,0,0.9);
+  font-style: italic;
+  ;
+}
+
+#tequila{
+  background-color: RGBA(225,224,0,0.9);
+  font-style: italic;
+}
+
 .text{
   border: 2px solid black;
   background-color: lightgray;
@@ -135,7 +166,7 @@ main{
   margin-right: 300px;
   margin-top: 9px;
   opacity: 0.95;
-  overflow: auto;
+  overflow: scroll;
   padding: 9px 0 0 25px;
   width: 100vw; 
 }
@@ -151,10 +182,15 @@ main{
  padding-top: 50px;
 }
 
-.recipe-container{
-  margin-left: 50px;
+#vodka{
+  background-color: RGBA(29,37,255,1) ;
+  font-style: italic;
 }
-  
 
- 
+.shrink {
+  transition: all .2s ease-in-out;
+}
 
+.shrink:hover {
+  transform: scale(0.9)
+}

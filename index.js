@@ -2,29 +2,22 @@
 
 //Gin Button
 const buttonOne = document.querySelector('#gin');
-
-
 //Rum button
 const buttonTwo = document.querySelector('#rum')
-
-
 //Tequila button
 const buttonThree = document.querySelector('#tequila')
-
-
 //Vodka button
 const buttonFour = document.querySelector('#vodka')
 
-
-
 // First Axios Call for Search by Alcohol 
-// Request Drinks Img and Name
-// Appends Both to items-container
+// Drink Cards are Created With Name and Photo
+// Cards ID where append to each card
 const getIngredient = async (url) => {
   removeLiquor()
   try{ 
     const response = await axios.get(url)
     const drinks = response.data.drinks;
+    
     drinks.forEach((drink) => {
       const img = document.createElement('img');
       img.src = drink.strDrinkThumb;
@@ -32,6 +25,7 @@ const getIngredient = async (url) => {
       let pTag = document.createElement('p');
       pTag.innerText = drink.strDrink;
       const drinkDiv = document.createElement('div');
+      drinkDiv.classList.add('shrink')
       drinkDiv.value = drink.idDrink
       drinkDiv.classList.add('drinks')
       drinkDiv.append(img, pTag);
@@ -44,11 +38,10 @@ const getIngredient = async (url) => {
   }
 }
 
-//Get the value of each button on click 
+//Get ID number for each drink and calls back to getIngredient
 function getResponse(e) {
   const drink = e.target.value;
   const ingredient = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drink}`
-  // return userChoice = drink
   console.log(ingredient)
   getIngredient(ingredient);
   
@@ -59,7 +52,7 @@ buttonTwo.addEventListener('click', getResponse)
 buttonThree.addEventListener('click', getResponse)
 buttonFour.addEventListener('click', getResponse)
 
-// Created an event listener
+// DriveValues lets me console.log the array for drinks ID
 const drinkValues = () => {
   document.querySelectorAll('.drinks').forEach((drink) => {
     drink.addEventListener('click', async (e) => {
@@ -70,56 +63,51 @@ const drinkValues = () => {
       removeDrink()
       
       //Creating a new div to hold img, ul, p
+      // Created a ptag for the instruction and Image tag for the photo for instruction card
       const instructionContainer = document.querySelector('.ingredients-container');
       const recipeDiv = document.createElement('div');
+      
+      
+      const box = document.createElement('div')
+      box.classList.add('box')
+      instructionContainer.appendChild(box)
+
       recipeDiv.classList.add('recipe-container')
       const textDiv = document.createElement('div')
       textDiv.classList.add("text");
       const imageDrink = document.createElement('img');
       imageDrink.src = instructionList.strDrinkThumb;
       const ingredientList = document.createElement('ul');
-      // const ulContainer = document.createElement('div');
-      // ulContainer.classList.add('list');
-      
-      
-      const ingredients = Object.entries(instructionList).filter((entry) => {
-        return entry[0].includes('strIngredient') && entry[1]
-        
-        
-      })
-      ingredients.forEach(ingredient => {
-        const ingredientItem = document.createElement('li');
-        ingredientItem.innerText = ingredient[1];
-        ingredientList.appendChild(ingredientItem);
-        
-        
-      })
-      
-      
-      
-      
       const pTag = document.createElement('p');
       pTag.innerText = instructionList.strInstructions;
       console.log(ingredientList);
       recipeDiv.appendChild(imageDrink);
       textDiv.append(ingredientList ,pTag);
-      // ulContainer.appendChild(ingredientList);
       instructionContainer.appendChild(recipeDiv);
-      instructionContainer.appendChild(textDiv);
-      
+      instructionContainer.appendChild(textDiv)
+
+      const ingredients = Object.entries(instructionList).filter((entry) => {
+        return entry[0].includes('strIngredient') && entry[1]
+      })
+      ingredients.forEach(ingredient => {
+        const ingredientItem = document.createElement('li');
+        ingredientItem.innerText = ingredient[1];
+        ingredientList.appendChild(ingredientItem);
+      })
       
     })
   })
   
+  //Clear last pick drinks from the item divs
   function removeDrink(){
     const clearDrink = document.querySelector('.ingredients-container')
     while(clearDrink.lastChild){
       clearDrink.removeChild(clearDrink.lastChild);
     }
-    
   }
-  
-}   
+}
+
+//Clears last picks drink card
 function removeLiquor(){
   const clearLiquor = document.querySelector('.items-container')
   while(clearLiquor.lastChild){
@@ -138,10 +126,10 @@ function removeLiquor(){
     // }
     // hideDiv()
 
-window.addEventListener('mouseup', function(event){
-  const ingredientBox = document.querySelectorAll('ingredients-container');
-  if(event.target != ingredientBox && event.target.parentNode != ingredientBox){
-    ingredientBox.classList.toggle('hidden');
-  }
-})
+// window.addEventListener('mouseup', function(event){
+//   const ingredientBox = document.querySelectorAll('ingredients-container');
+//   if(event.target != ingredientBox && event.target.parentNode != ingredientBox){
+//     ingredientBox.classList.toggle('hidden');
+//   }
+// })
 
