@@ -78,8 +78,8 @@ const drinkValues = () => {
       const imageDrink = document.createElement('img');
       imageDrink.src = instructionList.strDrinkThumb;
       const ingredientList = document.createElement('ul');
-      const ulContainer = document.createElement('div');
-      ulContainer.classList.add('list');
+      // const ulContainer = document.createElement('div');
+      // ulContainer.classList.add('list');
       
       
       const ingredients = Object.entries(instructionList).filter((entry) => {
@@ -102,11 +102,10 @@ const drinkValues = () => {
       pTag.innerText = instructionList.strInstructions;
       console.log(ingredientList);
       recipeDiv.appendChild(imageDrink);
-      textDiv.append(pTag);
-      ulContainer.appendChild(ingredientList);
-      instructionContainer.appendChild(ulContainer);
-      instructionContainer.appendChild(textDiv);
+      textDiv.append(ingredientList ,pTag);
+      // ulContainer.appendChild(ingredientList);
       instructionContainer.appendChild(recipeDiv);
+      instructionContainer.appendChild(textDiv);
       
       
     })
@@ -127,3 +126,22 @@ function removeLiquor(){
     clearLiquor.removeChild(clearLiquor.lastChild);
   }
 }
+
+// const hideDiv = () => {
+  //   const ingredientsHide = document.querySelector('ingredients-container');
+  //   const test = ingredientsHide.contains();
+  //   console.log('test', ingredientsHide);
+  //   if(ingredientsHide.contains()){
+    //     const itemHide = document.querySelector('.items-container')
+    //     itemHide.classList.add('hidden')
+    //   } 
+    // }
+    // hideDiv()
+
+window.addEventListener('mouseup', function(event){
+  const ingredientBox = document.querySelectorAll('ingredients-container');
+  if(event.target != ingredientBox && event.target.parentNode != ingredientBox){
+    ingredientBox.classList.toggle('hidden');
+  }
+})
+
