@@ -197,7 +197,7 @@ main {
   font-style: italic;
 }
 
-@media only screen and (max-width: 1465px) {
+@media screen and (max-width: 1465px) {
   .items-container {
    margin: 5px auto;
   }
@@ -205,7 +205,11 @@ main {
     
 }
 
-@media only screen and (max-width: 1204px) {
+/* --------------------------------------------
+-------------Media Screen-------------------
+-------------------------------------------- */
+
+@media screen and (max-width: 1204px) {
 
 .ingredients-container img{
   width: 195px;
@@ -239,13 +243,12 @@ main {
   height: 50px;
 }
 button {
-/* justify-content: space-around; */
 margin: 0 20px;
 }
 
 }
 
-@media only screen and (max-width: 570px) {
+@media screen and (max-width: 570px) {
 button {
   margin: 5px auto;
   border-radius: 100%;
@@ -264,7 +267,9 @@ button {
 
 .ingredients-container img {
  background-color: RGBA(255,255,255,0.78);
- width: 150px;
+ padding: 20px;
+ width: 200px;
+
 }
 
 main
@@ -281,21 +286,22 @@ main
   display: block;
   padding: 10px ;
   margin: 0 auto;
-  /* width: 300px; */
+  width: 300px;
   background-color: RGBA(255,255,255,0.78);
 }
 .text ul {
   width: 250px;
   height: 100px;
-  margin-left: 60px;
-  padding-left: 25px;
+  margin-left: 0px;
+  padding-left: 30px;
   font-size: 18px;
   overflow:scroll;
 }
 .text p {
   flex-direction: row;
   padding:0;
-  margin: 10px auto;
+  margin: px auto;
+  width:250px;
 }
 .recipe-container {
   margin: 8px 30%;
@@ -314,25 +320,10 @@ header, footer {
   background-color: black;
 }
 
+.drinks {
+  width: 200px;
+  padding: 5px;
+  text-align: center;
+}
 }
 
-@media only screen and (max-width: 325px){
-  .text {
-    font-size: 10px;
-    height: 34vh;
-    justify-self: flex-end;
-    flex-wrap: wrap;
-    line-height: 1.5em;
-    margin-right: -30px;
-    margin-top: 9px;
-    opacity: 0.95;
-    overflow: scroll;
-    padding: 0;
-    width: 100vw; 
-  }
-  .text p{
-    word-wrap: break-word;
-    padding: 0 50px;
-  }
-  
-}

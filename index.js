@@ -112,31 +112,5 @@ function removeLiquor(){
   }
 }
 
-// function functionPop() {
-//   const bg = document.querySelector('#bg');
-//   const popup = document.querySelector('#popup'); 
-//   const btn = document.querySelector('#btn-click')
 
-//   btn.onclick = function() {
-//     bg.style.display = 'block';
-//   }
-// }
-// const hideDiv = () => {
-  //   const ingredientsHide = document.querySelector('ingredients-container');
-  //   const test = ingredientsHide.contains();
-  //   console.log('test', ingredientsHide);
-  //   if(ingredientsHide.contains()){
-    //     const itemHide = document.querySelector('.items-container')
-    //     itemHide.classList.add('hidden')
-    //   } 
-    // }
-    // hideDiv()
-
-// window.addEventListener('mouseup', function(event){
-//   const removePopup = document.querySelector('#bg');
-//   if(event.target != removePopup && event.target.parentNode != removePopup){
-//     removePopup.classList.toggle('hidden');
-    
-//   }
-// })
 
