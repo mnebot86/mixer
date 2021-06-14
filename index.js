@@ -109,6 +109,15 @@ function removeLiquor(){
   }
 }
 
+// function functionPop() {
+//   const bg = document.querySelector('#bg');
+//   const popup = document.querySelector('#popup'); 
+//   const btn = document.querySelector('#btn-click')
+
+//   btn.onclick = function() {
+//     bg.style.display = 'block';
+//   }
+// }
 // const hideDiv = () => {
   //   const ingredientsHide = document.querySelector('ingredients-container');
   //   const test = ingredientsHide.contains();
@@ -121,9 +130,10 @@ function removeLiquor(){
     // hideDiv()
 
 // window.addEventListener('mouseup', function(event){
-//   const ingredientBox = document.querySelectorAll('ingredients-container');
-//   if(event.target != ingredientBox && event.target.parentNode != ingredientBox){
-//     ingredientBox.classList.toggle('hidden');
+//   const removePopup = document.querySelector('#bg');
+//   if(event.target != removePopup && event.target.parentNode != removePopup){
+//     removePopup.classList.toggle('hidden');
+    
 //   }
 // })
 
