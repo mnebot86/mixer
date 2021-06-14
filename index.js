@@ -21,15 +21,17 @@ const getIngredient = async (url) => {
     drinks.forEach((drink) => {
       const img = document.createElement('img');
       img.src = drink.strDrinkThumb;
-      const itemContainer = document.querySelector('.items-container')
       let pTag = document.createElement('p');
       pTag.innerText = drink.strDrink;
       const drinkDiv = document.createElement('div');
-      drinkDiv.classList.add('shrink')
-      drinkDiv.value = drink.idDrink
-      drinkDiv.classList.add('drinks')
+      const itemContainer = document.querySelector('.items-container')
       drinkDiv.append(img, pTag);
+      //Appends drinks ID to there cards
+      drinkDiv.value = drink.idDrink
       itemContainer.appendChild(drinkDiv);
+      //Css container to style the item cards
+      drinkDiv.classList.add('drinks')
+      drinkDiv.classList.add('shrink')
     })
     console.log('DATA', drinks);
     drinkValues()
@@ -38,7 +40,7 @@ const getIngredient = async (url) => {
   }
 }
 
-//Get ID number for each drink and calls back to getIngredient
+//Listen for the button click and request drink list of the button value 
 function getResponse(e) {
   const drink = e.target.value;
   const ingredient = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drink}`
@@ -52,7 +54,7 @@ buttonTwo.addEventListener('click', getResponse)
 buttonThree.addEventListener('click', getResponse)
 buttonFour.addEventListener('click', getResponse)
 
-// DriveValues lets me console.log the array for drinks ID
+// DrinksValues lets me console.log the array for drinks ID
 const drinkValues = () => {
   document.querySelectorAll('.drinks').forEach((drink) => {
     drink.addEventListener('click', async (e) => {
@@ -62,8 +64,8 @@ const drinkValues = () => {
       
       removeDrink()
       
-      //Creating a new div to hold img, ul, p
-      // Created a ptag for the instruction and Image tag for the photo for instruction card
+      
+      // creates my drink cards with img, list of ingredients and instruction and appends to ingredients-container
       const instructionContainer = document.querySelector('.ingredients-container');
       const recipeDiv = document.createElement('div');
       recipeDiv.classList.add('recipe-container')
@@ -79,7 +81,8 @@ const drinkValues = () => {
       textDiv.append(ingredientList ,pTag);
       instructionContainer.appendChild(recipeDiv);
       instructionContainer.appendChild(textDiv)
-
+      
+      //Gets each ingredient for each drink
       const ingredients = Object.entries(instructionList).filter((entry) => {
         return entry[0].includes('strIngredient') && entry[1]
       })
@@ -92,7 +95,7 @@ const drinkValues = () => {
     })
   })
   
-  //Clear last pick drinks from the item divs
+  //Clear last child from ingredient-container (drink cards)
   function removeDrink(){
     const clearDrink = document.querySelector('.ingredients-container')
     while(clearDrink.lastChild){
@@ -101,7 +104,7 @@ const drinkValues = () => {
   }
 }
 
-//Clears last picks drink card
+//Clears last child with items container.
 function removeLiquor(){
   const clearLiquor = document.querySelector('.items-container')
   while(clearLiquor.lastChild){

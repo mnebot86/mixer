@@ -27,7 +27,7 @@ www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
 ## MVP
 Html
 Axios Calls
-Css with grid
+Css with flexbox
 
 ## Post MVP
 Random Drink Selector
@@ -50,7 +50,7 @@ Search by first Letter
 ## Timeframes
 |Task                          | Time  |
 |-----------------------------:|:-----:|
-|Html:adding classes and Ids   | 2 hrs |
+|Html:adding classes and Ids   | 2hrs |
 |event listener/ Dom           | 3 hrs |
 |add 2 axios calls             | 3 hrs |
 |styling event buttons         | 2 hrs |
