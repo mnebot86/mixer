@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding:0;
@@ -27,7 +27,7 @@ button {
   width: 100vw;
 }
 
-header{
+header {
   background-color:w white;
   border-bottom: 4px solid black;
   display: flex;
@@ -60,7 +60,7 @@ padding: 0 15px 20px 0;
 text-align: center;
 }
 
-#footer_name{
+#footer_name {
   margin-top: 25px;
   
 }
@@ -79,11 +79,9 @@ text-align: center;
   transform: scale(1.4);
 }
 
-.hidden{
-  display: none;
-}
 
-.ingredients-container{ 
+.ingredients-container { 
+ border-top: 2px solid black;
  display: flex;
  font-size: 24x;
  flex-direction: row;
@@ -113,11 +111,10 @@ display: flex;
 flex-wrap: wrap;
 height: 2000vh;
 overflow: auto;
-/* display: none; */
 }
 
 
-.items-container img{
+.items-container img {
   border: 2px solid black;
   border-radius: 6px;
   opacity: .8;
@@ -125,8 +122,9 @@ overflow: auto;
   width: 200px;
   }
 
-main{
+main {
   align-items: center;
+  background: black;
   background-image: url(image/colored_bottles.jpeg);
   background-position: center;
   background-repeat: no-repeat;
@@ -135,15 +133,16 @@ main{
   flex-direction: column;
   height: 85vh;
   justify-content: center;
+  margin:0 5px;
   width: 100vw;
 }
 
-.recipe-container{
+.recipe-container {
   margin-left: 50px;
 }
 
 
-#rum{
+#rum {
   background-color: RGBA(191,0,0,0.9);
   font-style: italic;
   ;
@@ -157,12 +156,12 @@ main{
   transform: scale(0.9)
 }
 
-#tequila{
+#tequila {
   background-color: RGBA(225,224,0,0.9);
   font-style: italic;
 }
 
-.text{
+.text {
   border: 2px solid black;
   background-color: lightgray;
   border-radius: 6px;
@@ -181,7 +180,7 @@ main{
   width: 100vw; 
 }
 
-.text ul{
+.text ul {
   font-size: 18px;
   margin: 10px 40px 0 20px;
 
@@ -193,20 +192,20 @@ main{
  padding-top: 50px;
 }
 
-#vodka{
+#vodka {
   background-color: RGBA(29,37,255,1) ;
   font-style: italic;
 }
 
-@media only screen and (max-width: 1362px) {
-  .text {
-    /* margin: 0; */
+@media only screen and (max-width: 1465px) {
+  .items-container {
+   margin: 5px auto;
   }
  
     
 }
 
-@media only screen and (max-width: 1204px){
+@media only screen and (max-width: 1204px) {
 
 .ingredients-container img{
   width: 195px;
@@ -216,14 +215,15 @@ main{
 width: 900px;
 height: 27vh;
 margin-top: 10px;
-font-size: 17px;
+font-size: 16px;
+min-width: 425px;
 }
 
-.text p{
+.text p {
   padding-right: 10px;
 }
 
-main{
+main {
   height: 82vh;
 }
 
@@ -232,77 +232,73 @@ main{
   font-size: 17px;
 }
 
-.items-container img{
+.items-container img {
   width: 150px;
 }
 .button-container {
   height: 50px;
 }
-button{
+button {
 /* justify-content: space-around; */
 margin: 0 20px;
 }
 
 }
 
-@media only screen and (max-width: 570px){
-button{
+@media only screen and (max-width: 570px) {
+button {
   margin: 5px auto;
   border-radius: 100%;
   width: 70px;
   font-size: 18px;
   padding: 5px;
-  content: 
 }
-.ingredients-container{
+.ingredients-container {
   flex-direction: column;
   height: 44vh;
   margin: 0;
   padding:0;
   align-items: flex-start;
   border: 2px solid black;
-  
-
 }
+
 .ingredients-container img {
  background-color: RGBA(255,255,255,0.78);
  width: 150px;
- 
 }
 
-main{
+main
+{
   height: 85vh;
   overflow: hidden;
   justify-content: center;
   background-image: url(image/mix_green.jpeg);
   opacity: .95;
-  
+  margin:0;
 }
+
 .text {
   display: block;
   padding: 10px ;
   margin: 0 auto;
-  width: 350px;
+  /* width: 300px; */
   background-color: RGBA(255,255,255,0.78);
 }
-  .text ul {
+.text ul {
   width: 250px;
   height: 100px;
   margin-left: 60px;
   padding-left: 25px;
-  font-size: 24px;
+  font-size: 18px;
   overflow:scroll;
 }
 .text p {
   flex-direction: row;
-  padding: 0;
-  margin:  10px auto;
-  
-  
+  padding:0;
+  margin: 10px auto;
 }
 .recipe-container {
   margin: 8px 30%;
-  
 }
 
 .items-container {
@@ -317,4 +313,13 @@ header, footer {
   color: white;
   background-color: black;
 }
+
+}
+
+@media only screen and (max-width: 325px){
+.text{
+  width: 20vw;
+}
+
+
 }
